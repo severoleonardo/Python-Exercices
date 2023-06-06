@@ -4,85 +4,70 @@ import time
 def handle_invalid_choice():
     print("Invalid choice. Please select a valid option.")
 
-# Function for the first level scenario
-def level_one_scenario():
-    print("\nLevel One: The Mysterious Cave")
-    print("You find yourself standing at the entrance of a dark cave.")
-    print("There are two paths ahead of you, one leading to the left and the other to the right.")
+# Function for the forest scenario
+def forest_scenario():
+    print("You are walking through a dark forest and find two items: a MATCH and a FLASHLIGHT.")
     time.sleep(2)
 
     while True:
-        action = input("Which path do you choose? (Enter 'LEFT' or 'RIGHT'): ")
-        action = action.upper()
+        item_choice = input("Which one do you want to pick up? (Enter 'MATCH' or 'FLASHLIGHT'): ")
+        item_choice = item_choice.lower()
 
-        if action == "LEFT":
-            print("\nYou take the left path and venture deeper into the cave.")
-            # Continue the story based on this choice
-            break
-        elif action == "RIGHT":
-            print("\nYou choose the right path, following the dim light coming from that direction.")
-            # Continue the story based on this choice
-            break
-        else:
-            handle_invalid_choice()
+        if item_choice == "match":
+            print("\nYou pick up the match and strike it, and for an instant, the forest around you is illuminated.")
+            print("You see a large grizzly bear, and then the match burns out.")
+            time.sleep(2)
 
-# Function for the second level scenario
-def level_two_scenario():
-    print("\nLevel Two: The Enchanted Forest")
-    print("You emerge from the cave and find yourself in a magical forest.")
-    print("As you explore, you come across a fork in the road.")
-    time.sleep(2)
+            while True:
+                action = input("Do you want to RUN or HIDE behind a tree? ")
+                action = action.lower()
 
-    while True:
-        action = input("Which path do you take? (Enter 'FORWARD', 'LEFT', or 'RIGHT'): ")
-        action = action.upper()
+                if action == "run":
+                    print("\nYou sprint away from the bear, narrowly escaping its reach.")
+                    # Continue the story based on this choice
+                    break
+                elif action == "hide":
+                    print("\nYou quickly hide behind a tree, hoping the bear doesn't spot you.")
+                    # Continue the story based on this choice
+                    break
+                else:
+                    handle_invalid_choice()
 
-        if action == "FORWARD":
-            print("\nYou decide to continue straight ahead, eager to uncover the secrets of the forest.")
-            # Continue the story based on this choice
+            # End the scenario
             break
-        elif action == "LEFT":
-            print("\nYou veer left, hoping to find something interesting in that direction.")
-            # Continue the story based on this choice
-            break
-        elif action == "RIGHT":
-            print("\nYou take the right path, drawn by the enchanting sounds you hear.")
-            # Continue the story based on this choice
-            break
-        else:
-            handle_invalid_choice()
 
-# Function for the third level scenario
-def level_three_scenario():
-    print("\nLevel Three: The Lost Temple")
-    print("You've journeyed deep into the heart of the forest and discovered an ancient temple.")
-    print("The entrance to the temple is guarded by two statues.")
-    time.sleep(2)
+        elif item_choice == "flashlight":
+            print("\nYou pick up the flashlight and turn it on. You see the pathway lit up in front of you,")
+            print("but you thought you also heard something off to the side.")
+            time.sleep(2)
 
-    while True:
-        action = input("How do you approach the statues? (Enter 'QUIETLY' or 'BRAVELY'): ")
-        action = action.upper()
+            while True:
+                action = input("Do you want to FOLLOW the path or LOOK in the trees for the thing that made the noise? ")
+                action = action.lower()
 
-        if action == "QUIETLY":
-            print("\nYou decide to approach the statues quietly, hoping to avoid any unwanted attention.")
-            # Continue the story based on this choice
+                if action == "follow":
+                    print("\nYou decide to follow the path, eager to uncover the source of the noise.")
+                    # Continue the story based on this choice
+                    break
+                elif action == "look":
+                    print("\nYou shine the flashlight towards the trees, searching for the thing that made the noise.")
+                    # Continue the story based on this choice
+                    break
+                else:
+                    handle_invalid_choice()
+
+            # End the scenario
             break
-        elif action == "BRAVELY":
-            print("\nWith a brave heart, you boldly walk towards the statues, ready for whatever awaits.")
-            # Continue the story based on this choice
-            break
+
         else:
             handle_invalid_choice()
 
 # Main function to start the game
 def start_game():
     print("Welcome to the Text Adventure Game!")
-    print("You are about to embark on an exciting journey filled with mysteries and choices.")
     time.sleep(2)
 
-    level_one_scenario()
-    level_two_scenario()
-    level_three_scenario()
+    forest_scenario()
 
     print("\nCongratulations! You have completed the adventure game.")
 
